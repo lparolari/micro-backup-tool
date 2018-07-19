@@ -2,8 +2,8 @@
    your *github_repository* and uncomment these lines by removing the leading
    two dots.
 
-.. image:: https://travis-ci.org/micro-backup-tool.svg?branch=master
-    :target: https://travis-ci.org/micro-backup-tool
+.. image:: https://travis-ci.org/lparolari/micro-backup-tool.svg?branch=master
+    :target: https://travis-ci.org/lparolari/micro-backup-tool
 
 .. image:: https://coveralls.io/repos/github/micro-backup-tool/badge.svg?branch=master
     :target: https://coveralls.io/github/micro-backup-tool?branch=master
@@ -49,7 +49,7 @@ If something goes wrong?
 If something goes wrong the backup process **continues**, but the error
 is written on logs (see logs section).
 Unbacked-up list
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 At the end of every backup a list containing "unbacked" up files is written,
 and with the right option *mbt* automatically tries to backup again those
 files (see options section). [TODO: define better]
@@ -78,3 +78,5 @@ Usage
 ===============
 Define your own .mbtignore if needed to include or exclude certain files or
 directories based on their names.
+
+Coming soon...
