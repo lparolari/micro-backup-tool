@@ -5,8 +5,9 @@
 .. image:: https://travis-ci.org/lparolari/micro-backup-tool.svg?branch=master
     :target: https://travis-ci.org/lparolari/micro-backup-tool
 
-.. image:: https://coveralls.io/repos/github/micro-backup-tool/badge.svg?branch=master
-    :target: https://coveralls.io/github/micro-backup-tool?branch=master
+.. image:: https://coveralls.io/repos/github/lparolari/micro-backup-tool/badge.svg?branch=master
+    :target: https://coveralls.io/github/lparolari/micro-backup-tool?branch=master
+
 
 *Note:* this specs are a draft, might change.
 
