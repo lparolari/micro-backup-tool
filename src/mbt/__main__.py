@@ -1,6 +1,8 @@
 import argparse
+import os
+
 import mbt
-from mbt import __version__
+from mbt import __version__, Backup
 
 
 def get_parser():
@@ -10,6 +12,7 @@ def get_parser():
     parser = argparse.ArgumentParser('micro-backup-tool')
     version = '%(prog)s ' + __version__
     parser.add_argument('--version', '-v', action='version', version=version)
+    parser.add_argument('--backup_paths', '-b', nargs='*')
     return parser
 
 
@@ -25,6 +28,13 @@ def main(args=None):
 
     parser = get_parser()
     args = parser.parse_args(args)
+    print(args.backup_paths)
+
+    exec_path = repr(os.getcwd())
+    exec_path = exec_path.replace('\'', '')
+    print(exec_path)
+    b = Backup(exec_path=exec_path, backup_paths=args.backup_paths)
+    b.backup()
 
     # Put your main script logic here
     print('No action defined for mbt module!')
