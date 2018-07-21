@@ -136,7 +136,7 @@ Base:
 Backup:
 
 -b, --backup_paths  allows to specify what are the paths to backup
--c, --compression   allows to specify what type of compression to use between *.tar.gz* and *.zip*
+-c, --archive_type  allows to specify the archive type between: *.tar.gz*, *.zip*
 
 Logs:
 

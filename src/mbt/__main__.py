@@ -13,11 +13,14 @@ def get_parser():
     parser = argparse.ArgumentParser('micro-backup-tool')
     version = '%(prog)s ' + __version__
     parser.add_argument('--version', '-v', action='version', version=version)
-    parser.add_argument('--backup_paths', '-b', default=None, nargs='*', help='Paths to backup')
-    parser.add_argument('--compression', '-c', default='targz', choices=['targz', 'zip'], help='The compression format')
+    parser.add_argument('--backup_paths', '-b', default=None, required=True, nargs='*', help='Paths to backup')
+    parser.add_argument('--archive_type', '-t', default='targz', choices=['targz', 'zip'], help='The archive format')
     parser.add_argument('--logs_disabled', '-l', default=False, help='Disable logging')
     parser.add_argument('--errorlogs_disabled', '-e', default=False, help='Disable error logging')
     parser.add_argument('--unbacked_list_disabled', '-u', default=False, help='Disable unbacked-up files list')
+    parser.add_argument('--out_path', '-p', default='', help='The output directory for the backup file')
+    parser.add_argument('--out_name', '-n', default=None, help='The output name for the backup file')
+    parser.add_argument('--out_cont', '-s', default=False, nargs='?', type=bool, choices=[False, True], help='Create output folded named as backup name')
     return parser
 
 
@@ -37,11 +40,15 @@ def main(args=None):
 
     exec_path = os.getcwd()
     backup_paths = args.backup_paths
-    compression = args.compression
+    archive_type = args.archive_type
+    out_name = args.out_name
+    out_path = args.out_path
+    out_cont = args.out_cont if args.out_cont is not None else True
 
     b = Backup(exec_path=exec_path,
                backup_paths=backup_paths,
-               compression=compression)
+               archive_type=archive_type,
+               out_path=out_path, out_name=out_name, out_cont=out_cont)
     b.backup()
 
     # Put your main script logic here
